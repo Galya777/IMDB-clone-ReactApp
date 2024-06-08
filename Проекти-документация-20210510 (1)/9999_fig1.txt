@@ -1,0 +1,19 @@
+@startuml
+!define AWSPuml https://raw.githubusercontent.com/awslabs/aws-icons-for-plantuml/master/dist
+!includeurl AWSPuml/AWSCommon.puml
+!includeurl AWSPuml/EndUserComputing/all.puml
+!includeurl AWSPuml/Storage/SimpleStorageServiceS3.puml
+!includeurl AWSPuml/Compute/Lambda.puml
+
+
+actor "Student" as student
+WorkDocs(documents, "Документация", "AWS услуги", "Курс aws02, лектор Милен Петров")
+Lambda(phpfunction, "User Credentials", "Валидация на tex файл и генериране на pdf")
+SimpleStorageServiceS3(s3, "Tex файлове", "Technology", "Optional Description")
+SimpleStorageServiceS3(s3_out, "Log и pdf файлове", "Technology", "Резултат от валидацията и pdf формат")
+
+student --> documents
+documents -> s3
+s3 --> phpfunction
+phpfunction --> s3_out
+@enduml

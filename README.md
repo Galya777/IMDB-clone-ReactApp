@@ -50,5 +50,31 @@ used these instructions
 http://moviereviews-clone-app.s3-website-us-east-1.amazonaws.com
 
 
+### EC2
+https://www.youtube.com/watch?v=oaK223BiTBU&ab_channel=AlirazaKhan
+used these instructions
+
 ### RDS
+CREATE TABLE movies (
+    id INT PRIMARY KEY,
+    poster_path VARCHAR(255),
+    original_title VARCHAR(255),
+    release_date DATE,
+    vote_average DECIMAL(3, 1),
+    overview TEXT
+);
+
+INSERT INTO movies (id, poster_path, original_title, release_date, vote_average, overview) 
+VALUES 
+(1, '/path/to/poster1.jpg', 'Movie Title 1', '2023-06-01', 8.5, 'This is the overview for movie 1.'),
+(2, '/path/to/poster2.jpg', 'Movie Title 2', '2023-07-15', 7.2, 'This is the overview for movie 2.'),
+(3, '/path/to/poster3.jpg', 'Movie Title 3', '2023-08-10', 9.0, 'This is the overview for movie 3.');
+
+select * FROM movies;
+
+instruction from: https://www.youtube.com/watch?v=wOZ1hYw5Arw&ab_channel=chrismello
+
+### VCP
+
+instructions from: https://www.youtube.com/watch?v=ApGz8tpNLgo&ab_channel=BeABetterDev
 
